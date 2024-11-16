@@ -1,3 +1,3 @@
 require("johandielangman")
-print("Good day, Mr Johandielangman!")
 
+print("Let's get started!")
