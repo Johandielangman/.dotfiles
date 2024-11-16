@@ -1,0 +1,41 @@
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/projects/"]
+    path = ~/.gitconfig-personal
+
+
+[alias]
+	# View Alias Setup
+	alias = !git config --list | grep '^alias\\.'
+	listconfig = !git --no-pager config --list
+
+	# Most recently worked on branches
+    lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+
+	# Non-verbose status
+	st = status -sb
+
+	# Structure of the repository
+	structure = log --oneline --simplify-by-decoration --graph --all
+	s20 = !git --no-pager log -20 --oneline --simplify-by-decoration --graph --all
+
+	# Log
+	slog = log --pretty=format:'%C(auto)%h %C(red)%as %C(blue)%aN%C(auto)%d%C(green) %s'
+	last = !git --no-pager log -1 --pretty=format:'%C(auto)%h %C(red)%as %C(blue)%aN%C(auto)%d%C(green) %s'
+	l20 = !git --no-pager log -20 --pretty=format:'%C(auto)%h %C(red)%as %C(blue)%aN%C(auto)%d%C(green) %s'
+
+	# Anonymous commit
+	acommit = -c user.name="Anonymous" -c user.email="notme@localhost" commit
+
+	# Uncommit last unpushed changes
+	uncommit = reset HEAD~1 --soft
+
+	# Create a new branch based on the current branch and publish it
+	nb = "!f() { git checkout -b \"$1\" && git push -u origin \"$1\"; }; f"
+	nbm = "!f() { git checkout main && git pull && git checkout -b \"$1\" && git push -u origin \"$1\"; }; f"
+	publish = push -u origin HEAD
+
+	# Tags
+	latest-tag = !git tag --sort=-v:refname | head -n 1
+	tag10 = "!git tag -l --sort=-creatordate | head -n 10"
