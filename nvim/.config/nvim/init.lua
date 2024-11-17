@@ -1,3 +1,2 @@
-require("johandielangman")
-
-print("Let's get started!")
+require("johandielangman.core")
+require("johandielangman.lazy")

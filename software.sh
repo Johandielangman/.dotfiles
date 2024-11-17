@@ -26,3 +26,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/mast
 
 # One last update
 sudo apt update
+
+# Fonts
+sudo apt install unzip
+sudo apt install fontconfig
+mkdir -p ~/.local/share/fonts/MesloNF
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
+unzip Meslo.zip -d ~/.local/share/fonts/MesloNF
+rm Meslo.zip
+fc-cache -fv
