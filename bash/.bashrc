@@ -9,7 +9,7 @@ export OSH='/home/johan/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="font"
+OSH_THEME="cupcake"
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
@@ -150,3 +150,9 @@ alias python=python3.11
 function dotfiles() {
     ~/.dotfiles/install.sh
 }
+
+function brood(){
+    ssh -i "~/.ssh/brood.pem" ubuntu@ec2-35-173-217-180.compute-1.amazonaws.com
+}
+
+
