@@ -147,6 +147,8 @@ alias bashconfig="mate ~/.bashrc"
 alias ohmybash="mate ~/.oh-my-bash"
 alias python=python3.11
 
+# Some Useful functions ================
+
 function dotfiles() {
     ~/.dotfiles/install.sh
 }
@@ -154,5 +156,8 @@ function dotfiles() {
 function brood(){
     ssh -i "~/.ssh/brood.pem" ubuntu@ec2-35-173-217-180.compute-1.amazonaws.com
 }
+
+alias clc='clear'
+
 
 
