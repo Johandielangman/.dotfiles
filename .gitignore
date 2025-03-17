@@ -1,2 +1,3 @@
 Brewfile.lock.json
-ssh
+ssh/.ssh/*
+!ssh/.ssh/.gitkeep

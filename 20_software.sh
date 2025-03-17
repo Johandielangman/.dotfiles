@@ -2,10 +2,23 @@
 
 set -e
 
+# Run an update first
+sudo apt-get update
+
+# Install build dependencies
+sudo apt-get install build-essential procps curl file git
+
 # Install Homebrew
 if ! command -v brew &> /dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+	export brew=/home/linuxbrew/.linuxbrew/bin
+	test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+	test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+	test -r ~/.profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 fi
+
+# Install oh-my-bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 # Install Homebrew packages from Brewfile
 brew bundle --file="$HOME/.dotfiles/Brewfile"

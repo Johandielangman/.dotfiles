@@ -1,8 +1,8 @@
 [includeIf "gitdir:~/"]
-    path = ~/.gitconfig-work
-
-[includeIf "gitdir:~/projects/"]
     path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/repositories/gitlab/"]
+    path = ~/.gitconfig-work
 
 
 [alias]
@@ -39,3 +39,6 @@
 	# Tags
 	latest-tag = !git tag --sort=-v:refname | head -n 1
 	tag10 = "!git tag -l --sort=-creatordate | head -n 10"
+
+	# Wait
+	to-push = cherry -v

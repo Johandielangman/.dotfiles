@@ -6,8 +6,8 @@ packages=(
     bash
     profile
     git
-    nvim
     tmux
+    ssh
 )
 
 # Stow each package
