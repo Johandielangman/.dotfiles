@@ -162,6 +162,9 @@ alias clc='clear'
 
 # ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
 # =============== // SSH AGENT // ===============
+function fldr() {
+    echo "${PWD##*/}"
+}
 
 # REF: https://help.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases
 

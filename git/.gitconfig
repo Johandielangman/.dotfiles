@@ -42,3 +42,5 @@
 
 	# Wait
 	to-push = cherry -v
+[init]
+	defaultBranch = main
