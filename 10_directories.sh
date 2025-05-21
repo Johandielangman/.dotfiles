@@ -9,3 +9,4 @@ mkdir -p ~/sandbox/python
 
 # Config
 mkdir -p ~/.ssh
+mkdir -p ~/.aws
