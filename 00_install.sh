@@ -8,6 +8,7 @@ packages=(
     git
     tmux
     ssh
+    ranger
 )
 
 # Stow each package

@@ -210,3 +210,6 @@ talk(){
 }
 
 talk
+
+export VISUAL=code;
+export EDITOR=code;
