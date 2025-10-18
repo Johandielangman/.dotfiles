@@ -13,6 +13,8 @@ OSH_THEME="cupcake"
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
@@ -205,11 +207,31 @@ tx-ssh() {
 }
 # ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
 
+dotstow(){
+  ~/.dotfiles/25_install.sh
+}
+
+nvimconfig(){
+    nvim ~/.dotfiles/nvim/.config/nvim
+}
+
 talk(){
-  fortune | cowsay
+  if [[ -f "./fortune" ]]; then
+     ./fortune | cowsay
+  fi
 }
 
 talk
 
 export VISUAL=code;
 export EDITOR=code;
+export PATH="$PATH:/home/johan/.foundry/bin"
+
+. "$HOME/.local/bin/env"
+source $HOME/.local/bin/env
+eval "$(goenv init -)"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc' ]; then . '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/completion.bash.inc' ]; then . '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/completion.bash.inc'; fi

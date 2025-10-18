@@ -9,6 +9,7 @@ packages=(
     tmux
     ssh
     ranger
+    nvim
 )
 
 # Stow each package
