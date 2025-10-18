@@ -151,10 +151,6 @@ alias python=python3.11
 
 # Some Useful functions ================
 
-function dotfiles() {
-    ~/.dotfiles/install.sh
-}
-
 function brood(){
     ssh -i "~/.ssh/brood.pem" ubuntu@ec2-35-173-217-180.compute-1.amazonaws.com
 }
@@ -207,12 +203,20 @@ tx-ssh() {
 }
 # ~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~
 
-dotstow(){
+dfs(){
   ~/.dotfiles/25_install.sh
 }
 
-nvimconfig(){
+dotfiles() {
+    nvim ~/.dotfiles
+}
+
+nvimconf(){
     nvim ~/.dotfiles/nvim/.config/nvim
+}
+
+bashreload(){
+    source ~/.dotfiles/bash/.bashrc
 }
 
 talk(){
