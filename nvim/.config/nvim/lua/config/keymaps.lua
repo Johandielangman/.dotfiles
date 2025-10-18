@@ -1,5 +1,5 @@
 --- Select all
-vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
+vim.keymap.set("n", "<C-A>", "ggVG", { desc = "Select all" })
 
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })

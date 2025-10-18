@@ -208,11 +208,13 @@ dfs(){
 }
 
 dotfiles() {
-    nvim ~/.dotfiles
+    cd ~/.dotfiles
+    nvim .
 }
 
 nvimconf(){
-    nvim ~/.dotfiles/nvim/.config/nvim
+    cd ~/.dotfiles/nvim/.config/nvim
+    nvim .
 }
 
 bashreload(){
@@ -223,7 +225,13 @@ talk(){
     fortune ~/.fortunes/bin/ | cowsay
 }
 
-talk
+
+neofetch(){
+    fastfetch
+    fortune ~/.fortunes/bin
+}
+neofetch
+
 
 export VISUAL=code;
 export EDITOR=code;
@@ -237,3 +245,5 @@ if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/p
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/completion.bash.inc' ]; then . '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/completion.bash.inc'; fi
+
+eval "$(zoxide init bash)"

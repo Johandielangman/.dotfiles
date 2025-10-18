@@ -11,6 +11,7 @@ packages=(
     ranger
     nvim
     fortunes
+    fastfetch
 )
 
 # Stow each package
