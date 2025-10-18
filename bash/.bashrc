@@ -232,6 +232,11 @@ neofetch(){
 }
 neofetch
 
+venv(){
+   echo "activating"
+   source ./.venv/bin/activate
+}
+
 
 export VISUAL=code;
 export EDITOR=code;
