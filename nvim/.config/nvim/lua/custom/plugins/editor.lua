@@ -11,5 +11,6 @@ return {
     {
         "sphamba/smear-cursor.nvim",
         opts = {},
-    }
+    },
+	-- {"mg979/vim-visual-multi"}
 }
