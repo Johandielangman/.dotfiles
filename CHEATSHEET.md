@@ -58,4 +58,10 @@ ref: https://github.com/sharkdp/fd
 
 for example: `fd "auth" -t f` to search for files containing auth
 
+## fastfetch
+
+ref: https://github.com/fastfetch-cli/fastfetch/tree/dev/presets/examples
+
+- Run `fastfetch` to see a fastfetch
+- Run `neofetch` to see fastfetch + fortune
 

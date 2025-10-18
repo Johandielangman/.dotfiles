@@ -1,9 +1,5 @@
 return {
     {
-        "lewis6991/gitsigns.nvim",
-        opts = {},
-    },
-    {
         "nvim-mini/mini.indentscope",
         version = "*",
         opts = {

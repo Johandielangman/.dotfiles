@@ -239,7 +239,7 @@ export PATH="$PATH:/home/johan/.foundry/bin"
 
 . "$HOME/.local/bin/env"
 source $HOME/.local/bin/env
-eval "$(goenv init -)"
+# eval "$(goenv init -)"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc' ]; then . '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc'; fi
 
