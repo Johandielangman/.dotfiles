@@ -10,6 +10,7 @@ packages=(
     ssh
     ranger
     nvim
+    fortunes
 )
 
 # Stow each package

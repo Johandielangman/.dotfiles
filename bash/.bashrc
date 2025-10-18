@@ -220,9 +220,7 @@ bashreload(){
 }
 
 talk(){
-  if [[ -f "./fortune" ]]; then
-     ./fortune | cowsay
-  fi
+    fortune ~/.fortunes/bin/ | cowsay
 }
 
 talk

@@ -1,3 +1,6 @@
 Brewfile.lock.json
 ssh/.ssh/*
+*.dat
 !ssh/.ssh/.gitkeep
+
+
