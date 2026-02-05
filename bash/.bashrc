@@ -221,6 +221,9 @@ bashreload(){
     source ~/.dotfiles/bash/.bashrc
 }
 
+# Initialize Homebrew early so commands are available
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 talk(){
     fortune ~/.fortunes/bin/ | cowsay
 }
@@ -230,7 +233,11 @@ neofetch(){
     fastfetch
     fortune ~/.fortunes/bin
 }
-neofetch
+
+# Only run neofetch if the commands are available
+if command -v fastfetch &> /dev/null && command -v fortune &> /dev/null; then
+    neofetch
+fi
 
 venv(){
    echo "activating"
@@ -242,8 +249,6 @@ export VISUAL=code;
 export EDITOR=code;
 export PATH="$PATH:/home/johan/.foundry/bin"
 
-. "$HOME/.local/bin/env"
-source $HOME/.local/bin/env
 # eval "$(goenv init -)"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc' ]; then . '/home/johan/repositories/github/gcp-files-with-tests/google-cloud-sdk/path.bash.inc'; fi

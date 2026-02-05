@@ -14,5 +14,13 @@ for script in "$HOME/.dotfiles/install/"*.sh; do
 	"$script"
 done
 
+# Compile fortune files
+if [ -f "$HOME/.dotfiles/fortunes/.fortunes/compile.sh" ]; then
+	echo "Compiling fortune files..."
+	cd "$HOME/.dotfiles/fortunes/.fortunes"
+	chmod +x compile.sh
+	./compile.sh
+fi
+
 # One last update
 sudo apt update
